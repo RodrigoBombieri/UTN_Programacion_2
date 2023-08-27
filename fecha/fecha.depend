@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1693162868 source:c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\tp2\articulo\fecha\fecha\main.cpp
+	<iostream>
+	"fecha.h"
+	"Cliente.h"
+
+1692830944 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\tp2\articulo\fecha\fecha\fecha.h
+	<string.h>
+
+1692830596 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\tp2\articulo\fecha\fecha\cliente.h
+	<string.h>
+	"fecha.h"
+
+1693163000 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\tp2\articulo\fecha\fecha\include\fecha.h
+	<string.h>
+	<iostream>
+
+1693163191 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\tp2\articulo\fecha\fecha\include\cliente.h
+	<string.h>
+	"fecha.h"
+	<iostream>
+
+1693148609 source:c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\tp2\articulo\fecha\fecha\src\cliente.cpp
+
+1693148627 source:c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\tp2\articulo\fecha\fecha\src\fecha.cpp
+
