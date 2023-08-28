@@ -110,12 +110,17 @@ void Cliente::Mostrar(){
 void mostrarMenu(){
     cout << "--------------------- MENU ----------------------------" << endl;
     cout << "-------------------------------------------------------" << endl;
-    cout << "1 - PUNTO A -------------------------------------------" << endl;
-    cout << "2 - PUNTO B -------------------------------------------" << endl;
-    cout << "3 - PUNTO C -------------------------------------------" << endl;
-    cout << "4 - PUNTO D -------------------------------------------" << endl;
-    cout << "5 - PUNTO E -------------------------------------------" << endl;
-    cout << "6 - PUNTO F -------------------------------------------" << endl;
+    cout << "1 - PUNTO A Cargar un vector de 10 clientes -----------" << endl;
+    cout << "2 - PUNTO B Listar todos los clientes del vector ------" << endl;
+    cout << "3 - PUNTO C Listar todos los clientes cuyo DNI sea mayor ";
+    cout << " a un valor que se ingresa por teclado." << endl;
+    cout << "4 - PUNTO D A partir de un valor de DNI recibido como parámetro,";
+    cout << "devolver la posición del objeto que contiene ese DNI. De no encontrarlo devolver -1." << endl;
+    cout << "5 - PUNTO E Igual a la función del punto anterior,";
+    cout << "pero debe devolver el objeto completo que contiene el DNI.";
+    cout << "De no encontrar el código la función debe devolver un objeto Cliente con un valor de -1 en el DNI." << endl;
+    cout << "6 - PUNTO F Dado una fecha que se recibe como parámetro";
+    cout << " devolver la cantidad de clientes cuyo nacimiento sea anterior a ese valor recibido." << endl;
     cout << "-------------------------------------------------------" << endl;
     cout << "0 - SALIR ---------------------------------------------" << endl;
 }
