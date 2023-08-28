@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1693249684 source:c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\tp3\empleados\main.cpp
+	<iostream>
+	"empleados.h"
+
+1693249932 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\tp3\empleados\empleados.h
+	<string.h>
+	<iostream>
+
