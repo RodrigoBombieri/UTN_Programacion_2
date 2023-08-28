@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    Fecha fechaRef;
+    Fecha fechaRef, fechaRef2;
     bool corte = true;
     int opcion, dniReferenciaPuntoD, dniReferenciaPuntoE;
     Cliente vCliente1[10];
@@ -39,10 +39,11 @@ int main()
         posicionObjetoDniReferencia(vCliente1, 1,dniReferenciaPuntoE);
         break;
     case 6:
-        /// Punto f
+        Punto f
         cout << "Ingrese una fecha de referencia: ";
         fechaRef.Cargar();
-        fechaNacimientoAnteriorReferencia(vCliente1, 1, fechaRef);
+        fechaRef2 = fechaRef;
+        fechaNacimientoAnteriorReferencia(vCliente1, 1, fechaRef2);
         break;
     case 0: corte = false;
         break;

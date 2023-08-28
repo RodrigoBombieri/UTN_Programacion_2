@@ -57,10 +57,10 @@ class Cliente{
 
 Cliente::Cliente(){
     setDni(0);
-    setNombre({});
-    setApellido({});
+    setNombre(strcpy(_nombre, ""));
+    setApellido(strcpy(_apellido, ""));
     setTelefono(0);
-    setEmail({});
+    setEmail(strcpy(_email, ""));
     _fechaNacimiento.setDia(0);
     _fechaNacimiento.setMes(0);
     _fechaNacimiento.setAnio(0);
@@ -102,7 +102,7 @@ void Cliente::Mostrar(){
     cout << _apellido << endl;
     cout << _email << endl;
     cout << _telefono << endl;
-    //cout << fecha << endl;
+    _fechaNacimiento.Mostrar();
 
 }
 
@@ -179,11 +179,11 @@ void posicionObjetoDniReferencia(Cliente *c, int tam, int dniRef){
 void fechaNacimientoAnteriorReferencia(Cliente *c, int tam, Fecha f){
     int i, con=0;
     for(i=0; i<tam;i++){
-        if(f > c[i].getFechaNacimiento()){
+        if(c[i].getFechaNacimiento() < f){
             con++;
         }
     }
-    cout << "La cantidad de clientes con Fecha de nacimiento anterior a " << f << ", es de: " << con << endl;
+    cout << "La cantidad de clientes con Fecha de nacimiento anterior a " << f.Mostrar() << ", es de: " << con << endl;
 }
 
 #endif // CLIENTE_H_INCLUDED
