@@ -39,10 +39,7 @@ int main()
         posicionObjetoDniReferencia(vCliente1, 1,dniReferenciaPuntoE);
         break;
     case 6:
-        Punto f
-        cout << "Ingrese una fecha de referencia: ";
-        fechaRef.Cargar();
-        fechaRef2 = fechaRef;
+        ///Punto f
         fechaNacimientoAnteriorReferencia(vCliente1, 1, fechaRef2);
         break;
     case 0: corte = false;

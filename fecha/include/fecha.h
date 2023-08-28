@@ -29,6 +29,20 @@ class Fecha{
         int getMes(){return _mes;}
         int getAnio(){return _anio;}
 
+        bool operator<(const Fecha &otraFecha) const {
+            if (_anio < otraFecha._anio)
+                return true;
+            else if (_anio > otraFecha._anio)
+                return false;
+
+            if (_mes < otraFecha._mes)
+                return true;
+            else if (_mes > otraFecha._mes)
+                return false;
+
+            return _dia < otraFecha._dia;
+}
+
         Fecha();
 
 };

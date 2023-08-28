@@ -177,13 +177,20 @@ void posicionObjetoDniReferencia(Cliente *c, int tam, int dniRef){
 
 
 void fechaNacimientoAnteriorReferencia(Cliente *c, int tam, Fecha f){
+
     int i, con=0;
+    cout << "Ingrese una fecha de referencia: ";
+    f.Cargar();
+
+    cout << "La fecha de referencia es: ";
+    f.Mostrar();
+
     for(i=0; i<tam;i++){
         if(c[i].getFechaNacimiento() < f){
             con++;
         }
     }
-    cout << "La cantidad de clientes con Fecha de nacimiento anterior a " << f.Mostrar() << ", es de: " << con << endl;
+    cout << "La cantidad de clientes con Fecha de nacimiento anterior a la fecha de referencia es de: " << con << endl;
 }
 
 #endif // CLIENTE_H_INCLUDED
