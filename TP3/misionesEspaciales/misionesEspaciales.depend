@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1693357864 source:c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\tp3\misionesespaciales\main.cpp
+	<iostream>
+	"misiones.h"
+
+1693357970 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\tp3\misionesespaciales\misiones.h
+	<string.h>
+

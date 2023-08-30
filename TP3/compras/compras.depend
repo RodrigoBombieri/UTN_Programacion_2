@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1693354782 source:c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\tp3\compras\main.cpp
+	<iostream>
+	"compras.h"
+
+1693354855 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\tp3\compras\compras.h
+	"string.h"
+

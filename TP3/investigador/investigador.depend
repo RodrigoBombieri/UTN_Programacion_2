@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1693337403 source:c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\tp3\investigador\main.cpp
+	<iostream>
+	"investigador.h"
+
+1693337748 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\tp3\investigador\investigador.h
+	<iostream>
+	<string.h>
+
