@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1693437762 source:c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\tp3\inmueble\main.cpp
+1693530370 source:c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\tp3\inmueble\main.cpp
 	<iostream>
 	"inmueble.h"
 
-1693438255 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\tp3\inmueble\inmueble.h
+1693530445 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\tp3\inmueble\inmueble.h
 	<string.h>
 

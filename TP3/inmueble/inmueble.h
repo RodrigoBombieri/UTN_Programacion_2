@@ -163,8 +163,20 @@ private:
     int _cantAmbientes;
     float _superficieConstruida;
 public:
-    void Cargar();
-    void Mostrar();
+    void Cargar(){
+        cout << "Ingrese cantidad de ambientes de la casa: ";
+        cin >> _cantAmbientes;
+        cout << "Ingrese superficie construida: ";
+        cin >> _superficieConstruida;
+        cout << endl << endl;
+    }
+    void Mostrar(){
+        cout << "Cantidad de ambientes de la casa: ";
+        cout <<  _cantAmbientes << endl;
+        cout << "Superficie construida: ";
+        cout << _superficieConstruida << endl;
+        cout << endl << endl;
+    }
 
     void setCantAmbientes(int cantAmb){_cantAmbientes = cantAmb;}
     void setSuperficieConstruida(float supConstr){_superficieConstruida = supConstr;}
@@ -172,6 +184,97 @@ public:
     int getCantidadAmbientes(){return _cantAmbientes;}
     float getSuperficieConstruida(){return _superficieConstruida;}
 
+};
+
+class Departamento: public Inmueble{
+private:
+    int _cantAmbientes, _instComplementaria;
+
+public:
+    void Cargar(){
+        cout << "Ingrese la cantidad de ambientes del Departamento: ";
+        cin >> _cantAmbientes;
+        cout << "Indique si posee instalaciones complementarias (1-Pileta, 2-Quincho, 3-Galpon): ";
+        cin >> _instComplementaria;
+        cout << endl << endl;
+    }
+
+    void Mostrar(){
+        cout << "Cantidad de ambientes del Departamento: ";
+        cout << _cantAmbientes << endl;
+        cout << "Instalaciones complementarias: ";
+        if(_instComplementaria==1){
+            cout << "El departamento posee Pileta." << endl;
+        }else if(_instComplementaria==2){
+            cout << "El departamento posee Quincho." << endl;
+        }else if(_instComplementaria==3){
+            cout << "El departamento posee Galpon." << endl;
+        }else{
+            cout << "El departamento no posee instalaciones complementarias." << endl;
+        }
+
+    }
+
+    void setCantAmbientes(int cantAmb){_cantAmbientes = cantAmb;}
+    void setInstalacionesComplementarias(float instCompl){_instComplementaria = instCompl;}
+
+    int getCantidadAmbientes(){return _cantAmbientes;}
+    float getInstalacionesComplementarias(){return _instComplementaria;}
+
+};
+
+class LocalComercial: public Inmueble{
+private:
+    int _zona;
+public:
+    void Cargar(){
+        cout << "Ingrese la zona del local (1-Comercial, 2-Mixta, 3-Industrial): ";
+        cin >> _zona;
+        cout << endl << endl;
+    }
+
+    void Mostrar(){
+        cout << "Zona del Local: ";
+        if(_zona==1){
+            cout << "El local esta en una Zona Comercial." << endl;
+        }else if(_zona==2){
+            cout << "El local esta en una Zona Mixta." << endl;
+        }else if(_zona==3){
+            cout << "El local esta en una Zona Industrial." << endl;
+        }else{
+            cout << "Opcion no valida." << endl;
+        }
+    }
+
+    void setZona(int zona){_zona = zona;}
+    int getZona(){return _zona;}
+};
+
+class Terreno: public Inmueble{
+private:
+    char _mejoras[2];
+public:
+    void Cargar(){
+        cout << "Ingrese si el terreno tiene mejoras (A-Sin Mejoras, B-Asfalto, C-Todos los servicios): ";
+        cargarCadena(_mejoras, 1);
+        cout << endl << endl;
+    }
+
+    void Mostrar(){
+        cout << "Mejoras del terreno: ";
+        if(*_mejoras=='A'){
+            cout << "El terreno no tiene mejoras :(" << endl;
+        }else if(*_mejoras=='B'){
+            cout << "El terreno tiene asfalto :)" << endl;
+        }else if(*_mejoras=='C'){
+            cout << "El terreno tiene todos los servicios :D" << endl;
+        }else{
+            cout << "Opcion no valida." << endl;
+        }
+    }
+
+    void setMejoras(const char *mejoras){strcpy(_mejoras, mejoras);}
+    const char *getMejoras(){return _mejoras;}
 };
 
 #endif // INMUEBLE_H_INCLUDED
