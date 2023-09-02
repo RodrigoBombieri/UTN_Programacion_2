@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1693613473 source:c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\tp4_herencia\ejercicio_1\main.cpp
+	<iostream>
+	"Persona.h"
+
+1693616061 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\tp4_herencia\ejercicio_1\persona.h
+	<string.h>
+
