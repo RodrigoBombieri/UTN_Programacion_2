@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1693766744 source:c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\tp4_herencia\ejercicio_3\main.cpp
+	<iostream>
+	"animales.h"
+
+1693766717 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\tp4_herencia\ejercicio_3\animales.h
+	<string.h>
+
