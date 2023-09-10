@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1694373811 source:c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\main.cpp
+	<iostream>
+	"Empresa.h"
+
+1694373852 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\empresa.h
+	<string.h>
+
