@@ -14,6 +14,7 @@ int main()
         mostrarMenu();
         cout << "Elija una opcion: ";
         cin >> opcion;
+        cout << endl << endl;
 
         switch(opcion){
         case 1:
@@ -21,6 +22,12 @@ int main()
             break;
         case 2:
             mostrarUnRegistro();
+            break;
+        case 3:
+            cargarVariosRegistros(empresas);
+            break;
+        case 4:
+            mostrarVariosRegistros(empresas);
             break;
         case 0:
             corte =false;

@@ -51,9 +51,11 @@ public:
         cout << "Ingrese el numero de municipio (1 a 135): ";
         cin >> _numMunicipio;
         _estado = true;
+        cout << endl << endl;
     }
     void Mostrar(){
-        cout << "EMPRESA: ";
+        cout << "DATOS DE LA EMPRESA: " << endl;
+        cout << "Nombre: ";
         cout << _nombre << endl;
         cout << "ID: ";
         cout << _numEmpresa << endl;
@@ -116,5 +118,50 @@ bool mostrarUnRegistro(){
     fclose(pemp);
     return true;
 }
+
+
+bool cargarVariosRegistros(Empresa *empresas){
+    FILE *pEmp;
+
+    pEmp=fopen("Empresas.dat", "ab");
+    if(pEmp==NULL){
+        cout << "Error de archivo.";
+        exit(1);
+    }
+
+    for(int i=0; i<5; i++){
+        empresas[i].Cargar();
+    }
+
+    bool escribio=fwrite(empresas, sizeof(Empresa),5,pEmp);
+    fclose(pEmp);
+
+    return escribio;
+
+}
+
+void mostrarVector(Empresa *empresas, int tam){
+    for(int i=0; i<tam; i++){
+        empresas[i].Mostrar();
+        cout << endl;
+    }
+
+}
+
+void mostrarVariosRegistros(Empresa *empresas){
+    FILE *pEmp;
+
+    pEmp=fopen("Empresas.dat", "rb");
+        if(pEmp==NULL){
+            cout << "Error de archivo.";
+            exit(1);
+        }
+
+    fread(empresas, sizeof(Empresa),5,pEmp);
+    fclose(pEmp);
+    mostrarVector(empresas, 5);
+
+}
+
 
 #endif // EMPRESA_H_INCLUDED
