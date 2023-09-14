@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1694651824 source:c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\clase6_archivos\archivos2\main.cpp
+	<iostream>
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	"prototipos.h"
+	"clsFecha.h"
+	"personaAlumno.h"
+	"clsArchivoAlumnos.h"
+	"archivo2.h"
+
+1694474838 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\clase6_archivos\archivos2\prototipos.h
+
+1693262701 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\clase6_archivos\archivos2\clsfecha.h
+
+1694650240 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\clase6_archivos\archivos2\personaalumno.h
+
+1694651984 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\clase6_archivos\archivos2\archivo2.h
+
+1694651457 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\clase6_archivos\archivos2\clsarchivoalumnos.h
+
