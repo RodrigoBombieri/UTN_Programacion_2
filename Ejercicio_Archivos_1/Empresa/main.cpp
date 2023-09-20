@@ -27,23 +27,25 @@ int main()
                     cout << "Error en carga de registro."<< endl;
                 }
             break;
-        case 2:
-            if(!mostrarRegistros()){
+        case 2:if(bajaLogicaUnRegistro())cout << "Baja logica correcta."<< endl;
+                else{
+                    cout << "Error en la baja logica."<< endl;
+                }
+
+            break;
+        case 3:
+            break;
+        case 4: if(!mostrarRegistros()){
                 cout << "No existe el archivo." << endl;
             }
             break;
-        case 3:
-            cargarVariosRegistros(vE);
+        case 5: cargarVariosRegistros(vE);
             break;
-        case 4:
-            cantidadDeEmpresasPorMunicipio();
+        case 6: cantidadDeEmpresasPorMunicipio();
             break;
-        case 5:
-            empresasConMasDe200Empleados();
+        case 7: empresasConMasDe200Empleados();
             break;
-        case 6:categoriaEmpresaConMasEmpleados();
-            break;
-        case 7:
+        case 8: categoriaEmpresaConMasEmpleados();
             break;
         case 0:
             corte=false;

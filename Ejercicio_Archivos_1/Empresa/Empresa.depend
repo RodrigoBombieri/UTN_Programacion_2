@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1695168216 source:c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\main.cpp
+1695171320 source:c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\main.cpp
 	<iostream>
 	"Empresa.h"
 	"Archivos.h"
@@ -8,7 +8,7 @@
 1695148595 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\empresa.h
 	<string.h>
 
-1695168425 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\fglobales.h
+1695173164 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\fglobales.h
 	<string.h>
 	"Empresa.h"
 
