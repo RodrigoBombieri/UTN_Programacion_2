@@ -2,7 +2,19 @@
 #define EMPRESA_H_INCLUDED
 
 #include <string.h>
-#include "fGlobales.h"
+
+
+void cargarCadena(char *palabra, int tam){
+    int i = 0;
+    fflush(stdin);
+    for (i = 0 ; i < tam ; i++ ){
+        palabra[i] = cin.get();
+        if(palabra[i] == '\n') break;
+    }
+    palabra[i] = '\0';
+    fflush(stdin);
+}
+
 
 class Empresa{
 private:
@@ -10,11 +22,47 @@ private:
     char _nombre[30];
     bool _estado;
 public:
-    void setNumEmpresa(int ne){_numEmpresa = ne;}
-    void setNombre(const char *nomb){strcpy(_nombre, nomb);}
-    void setCantEmpleados(int cantE){_cantidadEmpleados = cantE;}
-    void setCategoria(int cat){_categoria = cat;}
-    void setNumeroMunicipio(int numMuni){_numMunicipio = numMuni;}
+
+    void setNumEmpresa(int ne)
+    {
+        while(ne < 0 || ne > 100){
+            cout << "Numero de empresa inválido. Ingrese nuevamente."<< endl;
+            cin >> ne;
+        }
+        _numEmpresa = ne;
+
+    }
+    void setNombre(const char *nomb)
+    {
+        cout << "El nombre debe tener como maximo 30 caracteres."<<endl;
+        strcpy(_nombre, nomb);
+    }
+    void setCantEmpleados(int cantE)
+    {
+        while(cantE < 0){
+            cout << "Numero invalido. Ingrese nuevamente."<<endl;
+            cin >> cantE;
+        }
+        _cantidadEmpleados = cantE;
+    }
+    void setCategoria(int cat)
+    {
+        while(cat < 0 || cat > 80){
+            cout << "Ingrese un numero de categoria entre 1 y 80."<<endl;
+            cin >> cat;
+        }
+        _categoria = cat;
+
+    }
+    void setNumeroMunicipio(int numMuni)
+    {
+        while(numMuni < 0 || numMuni>135){
+            cout << "Ingrese un numero de municipio entre 1 y 135."<<endl;
+            cin >> numMuni;
+        }
+        _numMunicipio = numMuni;
+    }
+
     void setEstado(bool estado){_estado = estado;}
 
     int getNumEmpresa()const {return _numEmpresa;}
@@ -26,7 +74,10 @@ public:
 
 
 
-    void Cargar(){
+
+
+    /// hacer validaciones en todos los campos
+void Cargar(){
         cout << "CARGAR EMPRESA: " << endl;
         cout << "Ingrese el ID de la empresa: ";
         cin >> _numEmpresa;
@@ -40,6 +91,7 @@ public:
         cin >> _numMunicipio;
         _estado = true;
         cout << endl << endl;
+
     }
 
     void Mostrar(){
@@ -59,7 +111,6 @@ public:
         }
     }
 };
-
 
 
 

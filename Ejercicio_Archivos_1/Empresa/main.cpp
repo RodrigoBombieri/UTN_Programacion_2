@@ -2,13 +2,16 @@
 
 using namespace std;
 #include "Empresa.h"
-#include "fGlobales.h"
 #include "Archivos.h"
+#include "fGlobales.h"
 
 int main()
 {
     int opcion;
     bool corte=true;
+    Empresa e;
+    Empresa vE[5];
+
 
     while(corte==true){
         system("cls");
@@ -30,15 +33,15 @@ int main()
             }
             break;
         case 3:
-            cargarVariosRegistros();
+            cargarVariosRegistros(vE);
             break;
         case 4:
-            ///
+            cantidadDeEmpresasPorMunicipio();
             break;
         case 5:
-            //cantidadDeEmpresasPorMunicipio(empresas);
+            empresasConMasDe200Empleados();
             break;
-        case 6:
+        case 6:categoriaEmpresaConMasEmpleados();
             break;
         case 7:
             break;

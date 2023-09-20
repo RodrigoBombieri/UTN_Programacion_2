@@ -34,6 +34,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Archivos.h" />
 		<Unit filename="Empresa.h" />
 		<Unit filename="fGlobales.h" />
 		<Unit filename="main.cpp" />
