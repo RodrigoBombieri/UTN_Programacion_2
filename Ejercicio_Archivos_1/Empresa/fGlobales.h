@@ -24,6 +24,19 @@ cout << "0 - Salir " << endl;
 cout << endl << endl;
 }
 
+
+void subMenuListar(){
+cout << "***********************************" << endl;
+cout << "********* SUB MENU LISTAR *********" << endl;
+cout << "1 - LISTAR EMPRESAS" << endl;
+cout << "2 - LISTAR EMPRESAS POR NUMERO" << endl;
+cout << "**********************************" << endl;
+cout << "**********************************" << endl;
+cout << "0 - Salir " << endl;
+cout << endl << endl;
+
+}
+
 void cargarVectorEmpresa(Empresa *vReg, int cant){
     int i;
     for(i=0; i<5; i++){
@@ -268,7 +281,7 @@ bool sobreescribirRegistro(Empresa emp, int pos){
     if(pEmp==NULL){
         return false;
     }
-    /// posicionamos el puntero y escribimos en ese registro
+    /// posicionamos el puntero y escribimos en ese registro el parametro que seteamos en la funcion
     fseek(pEmp,sizeof (Empresa)*pos,0);
     bool escribio=fwrite(&emp,sizeof (Empresa),1,pEmp);
     fclose(pEmp);
@@ -311,6 +324,65 @@ bool bajaLogicaUnRegistro(){
 
 }
 
+
+bool modificarCategoriaEmpresa(){
+    ///
+    int numEmpresa, nuevaCategoria, pos;
+    cout << "Numero de la empresa a modificar: "<<endl;
+    cin >> numEmpresa;
+    /// Llama a la funcion que devuelve la posicion de la empresa en el registro
+    pos=buscarNumEmpresa(numEmpresa);
+    if(pos==-2){
+        cout << "No existe el legajo."<<endl;
+        return false;
+    }
+    Empresa emp;
+    /// Lee el registro de la posicion que buscamos antes, y devuelve el objeto que leyó
+    emp=leerRegistro(pos);
+
+    /// Mostramos la empresa que se va a modificar con todos sus datos
+    cout << "Empresa a modificar: "<<endl;
+    emp.Mostrar();
+    cout << endl;
+    char opc;
+    cout << "Desea modificar? (S/N)";
+    cin >> opc;
+
+    /// Pedimos la nueva categoria, la seteamos en el objeto, y llamamos a la funcion sobreescribir registro, que va a cambiar el parametro
+    /// seteado, y devuelve true si lo cambió correctamente.
+    if(opc=='s' || opc=='S'){
+        cout << "Ingrese el nuevo numero de categoria: "<<endl;
+        cin >> nuevaCategoria;
+        emp.setCategoria(nuevaCategoria);
+        bool quePaso=sobreescribirRegistro(emp, pos);
+        return quePaso;
+    }
+    return false;
+
+
+}
+
+
+bool mostrarRegistrosFiltrados(int numEmpresa){
+    Empresa emp;
+    FILE *pEmp;
+    bool quePaso;
+
+    pEmp=fopen("Empresas.dat", "rb");
+        if(pEmp==NULL){
+            cout << "Error de archivo.";
+            return false;
+        }
+    while(quePaso=fread(&emp, sizeof(Empresa),1,pEmp)==1){
+        if(numEmpresa == emp.getNumEmpresa()){
+            emp.Mostrar();
+            cout << endl;
+        }
+    }
+    fclose(pEmp);
+    return quePaso;
+
+}
 
 
 #endif // FGLOBALES_H_INCLUDED

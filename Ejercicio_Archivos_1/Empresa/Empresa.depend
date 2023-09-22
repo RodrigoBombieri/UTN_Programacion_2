@@ -1,16 +1,18 @@
 # depslib dependency file v1.0
-1695171320 source:c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\main.cpp
+1695353049 source:c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\main.cpp
 	<iostream>
 	"Empresa.h"
-	"Archivos.h"
+	"ArchivoEmpresa.h"
 	"fGlobales.h"
 
 1695148595 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\empresa.h
 	<string.h>
 
-1695173164 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\fglobales.h
+1695353125 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\fglobales.h
 	<string.h>
 	"Empresa.h"
 
 1695157300 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\archivos.h
+
+1695339062 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\archivoempresa.h
 

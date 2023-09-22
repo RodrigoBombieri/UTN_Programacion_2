@@ -2,15 +2,17 @@
 
 using namespace std;
 #include "Empresa.h"
-#include "Archivos.h"
+#include "ArchivoEmpresa.h"
 #include "fGlobales.h"
 
 int main()
 {
-    int opcion;
-    bool corte=true;
+    int opcion, opcSubMenu;
+    bool corte=true, corteSubMenu=true;
+    int numEmpresa;
     Empresa e;
     Empresa vE[5];
+
 
 
     while(corte==true){
@@ -33,11 +35,39 @@ int main()
                 }
 
             break;
-        case 3:
+        case 3: if(modificarCategoriaEmpresa())cout << "Registro modificado correctamente."<<endl;
+                else{
+                    cout << "Error en la modificacion del registro."<<endl;
+                }
             break;
-        case 4: if(!mostrarRegistros()){
-                cout << "No existe el archivo." << endl;
+        case 4: {
+
+            while(corteSubMenu==true){
+                system("cls");
+                subMenuListar();
+                cout << "Elija una opcion: ";
+                cin >> opcSubMenu;
+                cout << endl << endl;
+                switch(opcSubMenu){
+
+                case 1:if(!mostrarRegistros()){
+                    cout << "No existe el archivo." << endl;
+                    }
+                    break;
+                case 2:
+                    cout << "Ingrese un numero de empresa para listar: "<<endl;
+                    cin >> numEmpresa;
+                    mostrarRegistrosFiltrados(numEmpresa);
+                    break;
+                case 0:
+                    corteSubMenu=false;
+                    break;
+                }
+            system("pause");
             }
+
+
+        }
             break;
         case 5: cargarVariosRegistros(vE);
             break;
