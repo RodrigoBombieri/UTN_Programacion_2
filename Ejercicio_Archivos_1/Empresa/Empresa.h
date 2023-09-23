@@ -1,26 +1,15 @@
 #ifndef EMPRESA_H_INCLUDED
 #define EMPRESA_H_INCLUDED
 
-#include <string.h>
-
-
-void cargarCadena(char *palabra, int tam){
-    int i = 0;
-    fflush(stdin);
-    for (i = 0 ; i < tam ; i++ ){
-        palabra[i] = cin.get();
-        if(palabra[i] == '\n') break;
-    }
-    palabra[i] = '\0';
-    fflush(stdin);
-}
 
 
 class Empresa{
 private:
     int _numEmpresa, _cantidadEmpleados, _categoria, _numMunicipio;
     char _nombre[30];
+    char _nombreMuni[30];
     bool _estado;
+    Municipio muni;
 public:
 
     void setNumEmpresa(int ne)
@@ -89,6 +78,8 @@ void Cargar(){
         cin >> _categoria;
         cout << "Ingrese el numero de municipio (1 a 135): ";
         cin >> _numMunicipio;
+        cout << "Ingrese el nombre del municipio: ";
+        cargarCadena(_nombreMuni, 29);
         _estado = true;
         cout << endl << endl;
 
@@ -107,6 +98,8 @@ void Cargar(){
         cout << _categoria << endl;
         cout << "Numero de municipio: ";
         cout << _numMunicipio << endl;
+        cout << "Nombre del municipio: ";
+        cout << _nombreMuni<<endl;
         cout << endl;
         }
     }

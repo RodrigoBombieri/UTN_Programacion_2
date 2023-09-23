@@ -1,6 +1,9 @@
 #include <iostream>
+#include <string.h>
+#include <cstring>
 
 using namespace std;
+#include "Municipios.h"
 #include "Empresa.h"
 #include "ArchivoEmpresa.h"
 #include "fGlobales.h"
@@ -17,6 +20,7 @@ int main()
 
     while(corte==true){
         system("cls");
+        corteSubMenu=true;
         mostrarMenu();
         cout << "Elija una opcion: ";
         cin >> opcion;
@@ -76,6 +80,10 @@ int main()
         case 7: empresasConMasDe200Empleados();
             break;
         case 8: categoriaEmpresaConMasEmpleados();
+            break;
+        case 9: municipiosConMenosDe200MilHabitantes();
+            break;
+        case 10: seccionConMayorCantidadDeHabitantes();
             break;
         case 0:
             corte=false;

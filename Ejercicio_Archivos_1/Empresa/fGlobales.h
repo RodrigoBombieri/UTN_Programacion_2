@@ -19,6 +19,8 @@ cout << "5 - Cargar varios registros" << endl;
 cout << "6 - Cantidad de empresas de cada municipio" << endl;
 cout << "7 - Empresas con mas de 200 empleados: " << endl;
 cout << "8 - Categoria de empresa con mas empleados: " << endl;
+cout << "9 - Municipios con menos de 200.000 habitantes: " << endl;
+cout << "10 - Seccion con mayor cantidad de habitantes: " << endl;
 cout << "**********************************" << endl;
 cout << "0 - Salir " << endl;
 cout << endl << endl;
@@ -43,73 +45,17 @@ void cargarVectorEmpresa(Empresa *vReg, int cant){
         vReg[i].Cargar();
     }
 }
-bool verificarExistencia(int numEmpresa) {
-    FILE *pEmp = fopen("Empresas.dat", "rb");
-    if (pEmp == NULL) {
-        return false;
-    }
-
-    Empresa emp;
-    while (fread(&emp, sizeof(Empresa), 1, pEmp)) {
-        if (emp.getNumEmpresa() == numEmpresa) {
-            fclose(pEmp);
-            return true; // El número de empresa ya existe en el archivo
-        }
-    }
-
-    fclose(pEmp);
-    return false; // El número de empresa no existe en el archivo
-}
 
 
 bool cargarUnRegistro() {
-    Empresa emp;
-    bool escribio;
-    FILE *pEmp;
 
-    pEmp = fopen("Empresas.dat", "ab");
-    if (pEmp == NULL) {
-        cout << "Error de archivo.";
-        return false;
-    }
-
-    // Leer el número de empresa que deseas ingresar
-    int numEmpresa;
-    cout << "Ingrese el número de empresa: ";
-    cin >> numEmpresa;
-
-    // Verificar si el número de empresa ya existe en el archivo
-    bool existe = verificarExistencia(numEmpresa);
-
-    if (existe) {
-        cout << "El número de empresa ya existe en el archivo." << endl;
-        fclose(pEmp);
-        return false;
-    }
-
-    // Asignar el número de empresa y cargar otros datos de la empresa
-    emp.setNumEmpresa(numEmpresa);
-    emp.Cargar();
-
-    // Escribir el registro en el archivo
-    escribio = fwrite(&emp, sizeof(Empresa), 1, pEmp);
-    if (escribio == 0) {
-        cout << "Error al escribir en el archivo." << endl;
-        fclose(pEmp);
-        return false;
-    }
-
-    fclose(pEmp);
-    return escribio;
-
-     /*
     Empresa reg;
     ArchivoEmpresa archi("Empresa.dat");
     cout <<"Ingresar los valores del registro"<<endl;
     reg.Cargar();
-    bool escribio= archi.grabarRegistro(reg);
+    bool escribio=archi.grabarRegistro(reg);
     return escribio;
-    */
+
 }
 
 Empresa leerRegistro(int pos){
@@ -152,27 +98,12 @@ bool cargarVariosRegistros(Empresa *vE){
 
 
 bool mostrarRegistros(){
-    Empresa emp;
-    FILE *pEmp;
-    bool quePaso;
 
-    pEmp=fopen("Empresas.dat", "rb");
-        if(pEmp==NULL){
-            cout << "Error de archivo.";
-            return false;
-        }
-    while(quePaso=fread(&emp, sizeof(Empresa),1,pEmp)==1){
-        emp.Mostrar();
-        cout << endl;
-    }
-    fclose(pEmp);
-    return quePaso;
-   /*
     /// creo un objeto para que me maneje el archivo de empresas
     ArchivoEmpresa archi("Empresas.dat");
-    bool quePaso = archi.listarRegistro();
+    bool quePaso = archi.listarRegistros();
     return quePaso;
-    */
+
 }
 
 /// PUNTO A
@@ -384,5 +315,55 @@ bool mostrarRegistrosFiltrados(int numEmpresa){
 
 }
 
+
+void municipiosConMenosDe200MilHabitantes(){
+    Empresa emp;
+    Municipio muni;
+    int conMuni=0;
+    const int CANT_MAX_HABIT = 200000;
+    FILE *pEmp;
+
+    pEmp=fopen("Empresas.dat", "rb");
+        if(pEmp==NULL){
+            cout << "Error de archivo.";
+        }
+
+    cout << "Municipios con menos de 200.000 habitantes: " << endl;
+    while(fread(&emp, sizeof(Empresa),1,pEmp)==1){
+        if(muni.getCantidadHabitantes()<CANT_MAX_HABIT){
+            conMuni++;
+        }
+    }
+    cout <<endl;
+    cout << "Se encuentran registrados: " << conMuni << " municipios con menos de 200.000 habitantes."<<endl;
+
+    fclose(pEmp);
+
+}
+
+void seccionConMayorCantidadDeHabitantes(){
+    Empresa emp;
+    Municipio muni;
+    int bmax=0, seccMax=0;
+    FILE *pEmp;
+
+
+    pEmp=fopen("Empresas.dat", "rb");
+        if(pEmp==NULL){
+            cout << "Error de archivo.";
+        }
+    cout << "Seccion con mayor cantidad de habitantes: " << endl;
+    while(fread(&emp, sizeof(Empresa),1,pEmp)==1){
+        if(bmax==0){
+            seccMax = muni.getSeccion();
+            bmax=1;
+        }else if(muni.getSeccion()>seccMax){
+            seccMax = muni.getSeccion();
+        }
+    }
+    cout <<endl;
+    cout << "La seccion con mayor cantidad de habitantes es la: " << seccMax << "."<<endl;
+    fclose(pEmp);
+}
 
 #endif // FGLOBALES_H_INCLUDED
