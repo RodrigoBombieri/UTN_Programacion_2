@@ -24,6 +24,10 @@ cout << "9 - Cargar municipio: " << endl;
 cout << "10 - Municipios con menos de 200.000 habitantes: " << endl;
 cout << "11 - Seccion con mayor cantidad de habitantes: " << endl;
 cout << "**********************************" << endl;
+cout << "12 - Cargar categoria: " << endl;
+cout << "13 - Categoria con mas empresas: " << endl;
+cout << "14 - Listado de empresas de categoria 15: " << endl;
+cout << "15 - Empresas de categoria 1 de cada municipio: " << endl;
 cout << "0 - Salir " << endl;
 cout << endl << endl;
 }
@@ -66,6 +70,16 @@ bool cargarMunicipio() {
     cout <<"Ingresar los valores del registro"<<endl;
     muni.Cargar();
     bool escribio=archiMuni.grabarRegistro(muni);
+    return escribio;
+
+}
+
+bool cargarCategoria() {
+    Categoria cate;
+    ArchivoCategoria archiCate("Categorias.dat");
+    cout <<"Ingresar los valores del registro"<<endl;
+    cate.Cargar();
+    bool escribio=archiCate.grabarRegistroCategorias(cate);
     return escribio;
 
 }
@@ -370,5 +384,39 @@ void seccionConMayorCantidadDeHabitantes(){
     cout << "La seccion con mayor cantidad de habitantes es la: " << seccMax << "."<<endl;
     fclose(p);
 }
+
+
+void categoriaConMasEmpresas(){
+    Empresa emp;
+    int vCat[80]={0};
+    int bmax=0, catMax=0, categoriaMax=0;
+    FILE *p;
+    p=fopen("Empresas.dat", "rb");
+        if(p==NULL){
+            cout << "Error de archivo.";
+        }
+
+    cout << "Categoria con mas empresas: " << endl;
+    while(fread(&emp, sizeof(Empresa),1,p)==1){
+            vCat[emp.getCategoria()]++;
+
+        if(bmax==0){
+            catMax = vCat[emp.getCategoria()];
+            categoriaMax = emp.getCategoria();
+            bmax=1;
+        }else if(vCat[emp.getCategoria()]>catMax){
+            catMax = vCat[emp.getCategoria()];
+            categoriaMax = emp.getCategoria();
+        }
+
+    }
+
+
+    cout <<endl;
+    cout << "La categorias con mas empresas es: " << categoriaMax << "."<<endl;
+    fclose(p);
+
+}
+
 
 #endif // FGLOBALES_H_INCLUDED

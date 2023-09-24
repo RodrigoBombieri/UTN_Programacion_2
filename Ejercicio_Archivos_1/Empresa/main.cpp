@@ -5,8 +5,10 @@
 using namespace std;
 #include "Municipios.h"
 #include "Empresa.h"
+#include "Categoria.h"
 #include "ArchivoEmpresa.h"
 #include "ArchivoMuni.h"
+#include "ArchivoCategoria.h"
 #include "fGlobales.h"
 
 int main()
@@ -17,6 +19,7 @@ int main()
     Empresa e;
     Empresa vE[5];
     Municipio muni;
+    Categoria cate;
 
 
 
@@ -72,7 +75,6 @@ int main()
             system("pause");
             }
 
-
         }
             break;
         case 5: cargarVariosRegistros(vE);
@@ -92,6 +94,14 @@ int main()
         case 10: municipiosConMenosDe200MilHabitantes(muni);
             break;
         case 11: seccionConMayorCantidadDeHabitantes();
+            break;
+        case 12: cargarCategoria();
+            break;
+        case 13: categoriaConMasEmpresas();
+            break;
+        case 14:
+            break;
+        case 15:
             break;
         case 0:
             corte=false;

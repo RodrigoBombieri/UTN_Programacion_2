@@ -1,17 +1,19 @@
 # depslib dependency file v1.0
-1695520054 source:c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\main.cpp
+1695523458 source:c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\main.cpp
 	<iostream>
 	<string.h>
 	<cstring>
 	"Municipios.h"
 	"Empresa.h"
+	"Categoria.h"
 	"ArchivoEmpresa.h"
 	"ArchivoMuni.h"
+	"ArchivoCategoria.h"
 	"fGlobales.h"
 
-1695423484 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\empresa.h
+1695523263 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\empresa.h
 
-1695520949 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\fglobales.h
+1695524855 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\fglobales.h
 	<string.h>
 	"Empresa.h"
 
@@ -22,4 +24,8 @@
 1695423015 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\municipios.h
 
 1695520835 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\archivomuni.h
+
+1695522879 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\categoria.h
+
+1695522532 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\archivocategoria.h
 
