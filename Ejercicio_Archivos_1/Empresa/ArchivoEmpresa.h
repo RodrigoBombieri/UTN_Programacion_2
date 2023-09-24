@@ -31,9 +31,6 @@ public:
     bool listarRegistros();
     bool grabarRegistro(Empresa);
 
-
-
-
 };
 
 
@@ -65,7 +62,7 @@ bool ArchivoEmpresa::grabarRegistro(Empresa emp){
     }
     // Leer el número de empresa que deseas ingresar
     int numEmpresa;
-    cout << "Ingrese el número de empresa para verificar existencia: ";
+    cout << "Ingrese el número de municipio para verificar existencia: ";
     cin >> numEmpresa;
     // Verificar si el número de empresa ya existe en el archivo
     bool existe = verificarExistencia(numEmpresa);

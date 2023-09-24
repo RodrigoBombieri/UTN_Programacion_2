@@ -1,22 +1,25 @@
 # depslib dependency file v1.0
-1695502395 source:c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\main.cpp
+1695520054 source:c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\main.cpp
 	<iostream>
 	<string.h>
 	<cstring>
 	"Municipios.h"
 	"Empresa.h"
 	"ArchivoEmpresa.h"
+	"ArchivoMuni.h"
 	"fGlobales.h"
 
 1695423484 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\empresa.h
 
-1695503421 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\fglobales.h
+1695520949 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\fglobales.h
 	<string.h>
 	"Empresa.h"
 
 1695157300 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\archivos.h
 
-1695503655 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\archivoempresa.h
+1695520226 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\archivoempresa.h
 
 1695423015 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\municipios.h
+
+1695520835 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\ejercicio_archivos_1\empresa\archivomuni.h
 

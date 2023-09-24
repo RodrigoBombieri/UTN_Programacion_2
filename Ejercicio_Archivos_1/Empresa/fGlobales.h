@@ -19,8 +19,10 @@ cout << "5 - Cargar varios registros" << endl;
 cout << "6 - Cantidad de empresas de cada municipio" << endl;
 cout << "7 - Empresas con mas de 200 empleados: " << endl;
 cout << "8 - Categoria de empresa con mas empleados: " << endl;
-cout << "9 - Municipios con menos de 200.000 habitantes: " << endl;
-cout << "10 - Seccion con mayor cantidad de habitantes: " << endl;
+cout << "**********************************" << endl;
+cout << "9 - Cargar municipio: " << endl;
+cout << "10 - Municipios con menos de 200.000 habitantes: " << endl;
+cout << "11 - Seccion con mayor cantidad de habitantes: " << endl;
 cout << "**********************************" << endl;
 cout << "0 - Salir " << endl;
 cout << endl << endl;
@@ -50,10 +52,20 @@ void cargarVectorEmpresa(Empresa *vReg, int cant){
 bool cargarUnRegistro() {
 
     Empresa reg;
-    ArchivoEmpresa archi("Empresa.dat");
+    ArchivoEmpresa archi("Empresas.dat");
     cout <<"Ingresar los valores del registro"<<endl;
     reg.Cargar();
     bool escribio=archi.grabarRegistro(reg);
+    return escribio;
+
+}
+
+bool cargarMunicipio() {
+    Municipio muni;
+    ArchivoMuni archiMuni("Municipios.dat");
+    cout <<"Ingresar los valores del registro"<<endl;
+    muni.Cargar();
+    bool escribio=archiMuni.grabarRegistro(muni);
     return escribio;
 
 }
@@ -312,24 +324,20 @@ bool mostrarRegistrosFiltrados(int numEmpresa){
     }
     fclose(pEmp);
     return quePaso;
-
 }
 
 
-void municipiosConMenosDe200MilHabitantes(){
-    Empresa emp;
-    Municipio muni;
+void municipiosConMenosDe200MilHabitantes(Municipio muni){
     int conMuni=0;
     const int CANT_MAX_HABIT = 200000;
-    FILE *pEmp;
-
-    pEmp=fopen("Empresas.dat", "rb");
-        if(pEmp==NULL){
+    FILE *p;
+    p=fopen("Municipios.dat", "rb");
+        if(p==NULL){
             cout << "Error de archivo.";
         }
 
     cout << "Municipios con menos de 200.000 habitantes: " << endl;
-    while(fread(&emp, sizeof(Empresa),1,pEmp)==1){
+    while(fread(&muni,sizeof(Municipio),1,p)==1){
         if(muni.getCantidadHabitantes()<CANT_MAX_HABIT){
             conMuni++;
         }
@@ -337,23 +345,20 @@ void municipiosConMenosDe200MilHabitantes(){
     cout <<endl;
     cout << "Se encuentran registrados: " << conMuni << " municipios con menos de 200.000 habitantes."<<endl;
 
-    fclose(pEmp);
+    fclose(p);
 
 }
 
 void seccionConMayorCantidadDeHabitantes(){
-    Empresa emp;
     Municipio muni;
     int bmax=0, seccMax=0;
-    FILE *pEmp;
-
-
-    pEmp=fopen("Empresas.dat", "rb");
-        if(pEmp==NULL){
+    FILE *p;
+    p=fopen("Municipios.dat", "rb");
+        if(p==NULL){
             cout << "Error de archivo.";
         }
     cout << "Seccion con mayor cantidad de habitantes: " << endl;
-    while(fread(&emp, sizeof(Empresa),1,pEmp)==1){
+    while(fread(&muni, sizeof(Municipio),1,p)==1){
         if(bmax==0){
             seccMax = muni.getSeccion();
             bmax=1;
@@ -363,7 +368,7 @@ void seccionConMayorCantidadDeHabitantes(){
     }
     cout <<endl;
     cout << "La seccion con mayor cantidad de habitantes es la: " << seccMax << "."<<endl;
-    fclose(pEmp);
+    fclose(p);
 }
 
 #endif // FGLOBALES_H_INCLUDED

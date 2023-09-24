@@ -6,6 +6,7 @@ using namespace std;
 #include "Municipios.h"
 #include "Empresa.h"
 #include "ArchivoEmpresa.h"
+#include "ArchivoMuni.h"
 #include "fGlobales.h"
 
 int main()
@@ -15,6 +16,7 @@ int main()
     int numEmpresa;
     Empresa e;
     Empresa vE[5];
+    Municipio muni;
 
 
 
@@ -81,9 +83,15 @@ int main()
             break;
         case 8: categoriaEmpresaConMasEmpleados();
             break;
-        case 9: municipiosConMenosDe200MilHabitantes();
+        case 9:
+            if(cargarMunicipio())cout << "Registro cargado correctamente."<< endl;
+                else{
+                    cout << "Error en carga de registro."<< endl;
+                }
             break;
-        case 10: seccionConMayorCantidadDeHabitantes();
+        case 10: municipiosConMenosDe200MilHabitantes(muni);
+            break;
+        case 11: seccionConMayorCantidadDeHabitantes();
             break;
         case 0:
             corte=false;
