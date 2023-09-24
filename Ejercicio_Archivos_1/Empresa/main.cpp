@@ -99,9 +99,9 @@ int main()
             break;
         case 13: categoriaConMasEmpresas();
             break;
-        case 14:
+        case 14:empresasCategoria15();
             break;
-        case 15:
+        case 15: empresasCategoria1PorMunicipio();
             break;
         case 0:
             corte=false;

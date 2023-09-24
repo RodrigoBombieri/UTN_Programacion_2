@@ -418,5 +418,71 @@ void categoriaConMasEmpresas(){
 
 }
 
+void listarCat15(Empresa emp){
+    cout << "EMPRESAS CATEGORIA 15"<<endl;
+    cout << "*********************"<<endl;
+    cout << "Numero: " << emp.getNumEmpresa()<<endl;
+    cout << "Nombre: " << emp.getNombreEmpresa()<<endl;
+    cout << "Municipio al que pertenece: " << emp.getNombreMunicipio()<<endl;
+    cout << "Estado: " << emp.getEstado()<<endl;
+    cout << "*********************"<<endl;
+
+}
+
+
+void empresasCategoria15(){
+    Empresa emp;
+    FILE *p;
+    p=fopen("Empresas.dat", "rb");
+        if(p==NULL){
+            cout << "No se pudo abrir el archivo."<<endl;
+            exit(1);
+        }
+
+        while(fread(&emp,sizeof(Empresa),1,p)==1){
+            if(emp.getCategoria()==15){
+                listarCat15(emp);
+                cout <<endl;
+            }
+        }
+    fclose(p);
+}
+
+void listarCat1(Empresa emp, int *vCon){
+    for(int i=0; i<135; i++){
+        if(vCon[i]!=0){
+            cout << "EMPRESAS CATEGORIA 1"<<endl;
+            cout << "*********************"<<endl;
+            cout << "Numero de Municipio: " << i <<endl;
+            cout << "Municipio al que pertenece: " << emp.getNombreMunicipio()<<endl;
+            cout << "Cantidad de empresas categoria 1: " << vCon[emp.getNumMunicipio()]<<endl;
+            cout << "Estado: " << emp.getEstado()<<endl;
+            cout << "*********************"<<endl;
+        }
+    }
+}
+
+void empresasCategoria1PorMunicipio(){
+    Empresa emp;
+    FILE *p;
+    int vCon[135]={0};
+    p=fopen("Empresas.dat", "rb");
+        if(p==NULL){
+            cout << "No se pudo abrir el archivo."<<endl;
+            exit(1);
+        }
+
+        while(fread(&emp,sizeof(Empresa),1,p)==1){
+            if(emp.getCategoria()==1){
+                vCon[emp.getNumMunicipio()]++;
+                cout <<endl;
+            }
+
+        }
+
+        listarCat1(emp, vCon);
+        fclose(p);
+}
+
 
 #endif // FGLOBALES_H_INCLUDED

@@ -61,6 +61,9 @@ public:
     int getNumMunicipio()const{return _numMunicipio;}
     bool getEstado(){return _estado;}
 
+    void setNombreMunicipio(const char *n){strcpy(_nombreMuni, n);}
+    const char *getNombreMunicipio(){return _nombreMuni;}
+
 
 
 
