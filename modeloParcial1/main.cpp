@@ -23,9 +23,9 @@ int main()
     //puntoA2();
     //puntoA3();
     //puntoA4();
-    puntoA5();
+    //puntoA5();
     //puntoA6();
-    //puntoA7();
+    puntoA7();
 
 
     cout << endl;
@@ -303,13 +303,97 @@ void puntoA4(){
 /// a5) La/s provincia/s con más de 22 proveedores
 
 void puntoA5(){
+    Proveedor prov;
+    ArchivoProveedor archiProv("proveedores.dat");
+    int cantProv = archiProv.contarRegistros();
+    int vProv[24]={0};
+
+    for(int i=0; i<cantProv; i++){
+        prov = archiProv.leerRegistro(i);
+
+        vProv[prov.getProvincia()]++;
+        //cout << i <<endl;
+    }
+
+    for(int i=0; i<cantProv; i++){
+        prov = archiProv.leerRegistro(i);
+        if(vProv[prov.getProvincia()-1]>22){
+            cout << "La provincia # " << prov.getProvincia() << " tiene mas de 22 proveedores."<<endl;
+        }
+    }
+
+
 }
 
 /// a6) Dar de baja lógica a todas las compras del año 2020.
 
+Compra sobreescribir(Compra c, int posicion){
+    FILE *p = fopen("compras.dat", "rb+");
+    if(p==NULL){
+        return c;
+    }
+    fseek(p, sizeof(Compra)*posicion,SEEK_SET);
+    fwrite(&c, sizeof(Compra),1,p);
+    fclose(p);
+    return c;
+}
+
+
 void puntoA6(){
+    Compra com;
+    ArchivoCompra archiCom("compras.dat");
+    int cantCom = archiCom.contarRegistros();
+
+    for(int i=0; i<cantCom; i++){
+        com=archiCom.leerRegistro(i);
+        if(com.getFechaCompra().getAnio()==2020){
+            char confirmar;
+            cout << "Confirmar eliminacion? (S/N): ";
+            cin >> confirmar;
+            if(confirmar == 's' || confirmar== 'S'){
+                com.setActivo(false);
+                com = sobreescribir(com, i);
+                cout << "Eliminado correctamente."<<endl;
+            }else{
+                cout << "Registro NO eliminado."<<endl;
+            }
+        }
+    }
 }
 /// a7) Modificar el precio de las aberturas en el archivo de materiales. Incrementar un 10% todos los materiales de ese tipo.
 
+Material aumentarPrecioUnitario(Material m, int posicion){
+
+    FILE *p = fopen("materiales.mat", "rb+");
+    if(p==NULL){
+        return m;
+    }
+    fseek(p, sizeof(Material)*posicion, SEEK_SET);
+    fwrite(&m, sizeof(Material),1,p);
+    fclose(p);
+    return m;
+}
+
+
+
 void puntoA7(){
+    float precioActual;
+
+    Material mat;
+    ArchivoMaterial archiMat("materiales.dat");
+    int cantMat = archiMat.contarRegistros();
+
+    for(int i=0; i<cantMat; i++){
+        mat = archiMat.leerRegistro(i);
+
+        precioActual = mat.getPU();
+        cout << "Material #" << mat.getCodigoMaterial() << ", Precio anterior: $ " << mat.getPU() <<endl;
+
+        mat.setPU(precioActual*1.1);
+
+        mat = aumentarPrecioUnitario(mat, i);
+        cout << "Material #" << mat.getCodigoMaterial() << ", Nuevo precio: $ " << mat.getPU() <<endl;
+        cout << "++++++++++++++++++++++++++++++++"<<endl;
+    }
+
 }
