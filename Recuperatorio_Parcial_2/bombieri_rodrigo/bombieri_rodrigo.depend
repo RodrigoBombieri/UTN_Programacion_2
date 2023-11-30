@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1699313324 source:c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\parcial_2\bombieri_rodrigo\bombieri_rodrigo.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<cstdio>
+	"parcial2.h"
+
+1699305930 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\parcial_2\bombieri_rodrigo\parcial2.h
+
+1699922393 source:c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\recuperatorio_parcial_2\bombieri_rodrigo\bombieri_rodrigo.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<cstdio>
+	"parcial2.h"
+
+1699912823 c:\users\rodrigo\desktop\utn\segundo cuatrimestre\programacion ii\recuperatorio_parcial_2\bombieri_rodrigo\parcial2.h
+
